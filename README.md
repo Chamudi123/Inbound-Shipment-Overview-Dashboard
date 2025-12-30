@@ -1,106 +1,77 @@
-# Inbound-Shipment-Overview-Dashboard
 # 📦 Inbound Shipment Overview Dashboard (Excel)
 
-## 🔍 Overview
-This repository contains an **Excel-based Inbound Shipment Dashboard** designed to monitor shipment performance, value, weight, data quality, and network coverage.
+## 🔍 Project Overview
+This repository contains an **Excel-based Inbound Shipment Dashboard** built using **Power Query, Data Modeling, Pivot Tables, and Charts**.
 
-The dashboard is fully built in **Microsoft Excel** using pivot tables, charts, KPI cards, and slicers.  
-It is optimized for **one-page PDF export** for reporting and executive presentations.
+The dashboard provides an executive-level view of inbound shipment performance, data quality, and network coverage.  
+It is designed to be **data-source flexible**, allowing the underlying dataset to be replaced without rebuilding the dashboard.
 
 ---
 
-## 🎯 Objectives
-- Track inbound shipment volume, weight, and declared value
-- Monitor data quality issues such as missing HS codes and misrouted shipments
+## 🎯 Dashboard Objectives
+- Monitor inbound shipment volume, weight(KG), and declared value($)
+- Track data quality issues (missing HS codes, misrouted shipments)
 - Analyze shipment distribution by origin, product category, and consignee
-- Provide a clean, executive-level summary for decision-making
+- Provide a single-page dashboard suitable for reporting and PDF export
 
 ---
 
-## 📊 Dashboard Features
+## 🔄 How the Dashboard Is Updated (Important)
 
-### 🔹 KPI Cards
-**Volume & Value**
-- Total Packages  
-- Single Packages  
-- Multiple Packages  
-- Total Weight (KG)  
-- Total Declared Value ($)
+The dashboard is refreshed using **Power Query and the Excel Data Model**.
 
-**Data Quality & Network**
-- Unique Shippers  
-- Unique Consignees  
-- Packages with Missing HS Codes  
-- Misrouted Shipments  
+### Standard Update Process
+1. Open the Excel dashboard file
+2. Go to **Data → Power Query Editor**
+3. Change the **data source** to the new dataset
+4. Click **Close & Load**
+
+This loads the new data into the **Data Model**.
 
 ---
 
-### 🔹 Analytical Sections
-- Declared Value Distribution
-- Weight Distribution
-- Number of Shipments by Origin
-- Weight by Origin
-- Declared Value by Origin
-- Declared Value by Product Category
-- Weight by Product Category
-- Declared Value by Consignee
-- Weight by Consignee
-- Pieces vs Declared Value
-- Weight vs Declared Value
+### Data Model Logic
+- New columns and calculated fields are created inside the **Data Model**
+- All KPI cards, pivot tables, pivot charts, and visuals are connected to the Data Model
+- Once the data is refreshed, all connected visuals update automatically
 
 ---
 
-### 🔹 Data Quality Exception Tables
-- Shipments with Missing HS Codes
-- Misrouted Shipments
+### Exception Tables (Special Handling)
+- The **Missing HS Code** and **Misrouted Shipments** tables are created as **pivot tables** in a **separate worksheet**
+- This worksheet is hidden from end users
+- The pivot table outputs are **copied and pasted** into the dashboard sheet for layout and formatting consistency
 
-These tables dynamically respond to slicers and KPI filters.
-
----
-
-## 🖨️ One-Page PDF Export (Correct Method)
-
-The dashboard is optimized to export as **one single PDF page** without cutting content.
-
-**Steps:**
-1. Select the entire dashboard area
-2. Go to **Page Layout → Print Area → Set Print Area**
-3. Open **Page Setup**
-   - Orientation: Landscape  
-   - Paper Size: A3  
-   - Scaling: Fit to **1 page wide × 1 page tall**
-4. Set margins to small values (~0.3")
-5. Disable gridlines and headings
-6. Export using:
-   - `File → Save As → PDF`
-   - or `File → Print → Microsoft Print to PDF`
+📌 When data is refreshed:
+- The hidden pivot tables update automatically
+- The pasted tables on the dashboard should be **re-copied and refreshed manually** if required
 
 ---
 
-## 📂 Repository Contents
+## 🖨️ PDF Export
+The dashboard is optimized for **single-page PDF export**.
 
-| Folder | Description |
-|------|------------|
-| `dashboard/` | Excel dashboard and PDF export |
-| `screenshots/` | Dashboard preview image |
-| `data/` | Data documentation |
-| `README.md` | Project documentation |
+**Recommended settings:**
+- Paper size: A5
+- Orientation: Portrait
+- Scaling: Fit to 1 page wide × 1 page tall
+- Print Area: Dashboard area only
 
 ---
 
-## 🛠️ Tools Used
+## 🛠️ Tools & Technologies
 - Microsoft Excel
+- Power Query
+- Excel Data Model
 - Pivot Tables & Pivot Charts
-- Slicers
-- Microsoft Print to PDF
 
 ---
 
-## 👥 Intended Audience
-- Supply Chain Analysts  
-- Logistics & Operations Managers  
-- Finance Teams  
-- Executives & Decision Makers  
+  ## 👥 Intended Audience
+- Supply Chain Analysts
+- Logistics & Operations Teams
+- Finance & Reporting Teams
+- Managers and Decision Makers
 
 ---
 
