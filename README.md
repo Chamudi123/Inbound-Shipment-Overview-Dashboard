@@ -28,6 +28,8 @@ The dashboard is refreshed using **Power Query and the Excel Data Model**.
 
 This loads the new data into the **Data Model**.
 
+Power query will provide the cleaned data.
+
 ---
 
 ### Data Model Logic
